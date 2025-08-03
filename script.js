@@ -12,8 +12,8 @@ document.getElementById("search-btn").onclick = async function () {
   statsBox.innerHTML = "<span style='color:#A9ECFD;'>Loading...</span>";
   statsBox.classList.add("visible");
 
-  const supabaseUrl = window.ENV?.SUPABASE_URL || "";
-  const apiKey = window.ENV?.SUPABASE_KEY || "";
+  const supabaseUrl = "https://bvvvlqbtwqetltdcvioie.supabase.co/rest/v1/";
+  const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ2dmxqYnR3cWVo0bHRkY3Zpb2llLCIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNjg2MjA1OTg3LCJleHAiOjIwMzk4ODE1ODd9.4ccII6MjA20TU5OTgzM30.d-leDFpzc6uxDvq47_FCOFqh0ztaL11oozm-z6T9N_M";
 
   let user = null;
 
@@ -36,13 +36,11 @@ document.getElementById("search-btn").onclick = async function () {
       if (data.length) user = data[0];
     }
 
-    // If not found
     if (!user) {
       statsBox.innerHTML = "<span style='color:#ff9494;'>User not found.</span>";
       return;
     }
 
-    // Format numbers
     const rank = user.rank || "—";
     const level = user.level || "—";
     const xp = user.total_xp ? Number(user.total_xp).toLocaleString() : "—";
