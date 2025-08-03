@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Union Tester Stats by Shinosuka</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains+Mono:400,700|Supermolot:400,700&display=swap">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img src="union-logo.svg" alt="Union Logo" class="logo"/>
+      <h1>Union Tester Stats by Shinosuka</h1>
+    </div>
+  </header>
+  <main>
+    <section id="search-section">
+      <div id="search-box">
+        <label for="username-input">Enter your X username</label>
+        <input type="text" id="username-input" placeholder="@username" autocomplete="off"/>
+        <button id="search-btn">Search</button>
+        <div id="user-stats" class="hidden"></div>
+      </div>
+    </section>
+    <section id="stats-section">
+      <h2>Testnet User Stats</h2>
+      <div id="levels-bar-graph" style="margin-top:2rem;"></div>
+    </section>
+  </main>
+  <footer>
+    <p>
+      All the stats are taken from available data, none of these are subjected to be accurate
+    </p>
+  </footer>
+  <!-- Place env.js first for security (holds your secrets, not in git) -->
+  <script src="env.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+  window.ENV = {
+    SUPABASE_URL: "{{SUPABASE_URL}}",
+    SUPABASE_KEY: "{{SUPABASE_KEY}}"
+  };
+</script>
+  <script src="script.js"></script>
+</body>
+</html>
