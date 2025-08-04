@@ -221,7 +221,7 @@ View your stats at: https://union-statistics.vercel.app
 
 My Stats are 👇`;
     const data = `Level: ${userLevel}, Title: ${userTitle}\nXP: ${userXP}${topX ? `\nI am Top ${topX}%\n` : ''}`;
-    const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweet + '\n' + data)}&url=https://x.com/YOUR_TWEET_URL_HERE`;
+    const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweet + '\n' + data)}&url=https://x.com/Shinosuka_eth/status/1952291198124823006`;
     window.open(url, '_blank');
   };
 
